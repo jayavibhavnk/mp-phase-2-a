@@ -46,9 +46,9 @@ def query_from_doc(text):
     qa = ChatVectorDBChain.from_llm(llm, db)
     prompt_template = "The user will ask you with problems related to healthcare, you are given information and using that answer the users queries"
     result = qa({"question":prompt_template+ text, "chat_history": chat_history})
-    print(result["answer"])
+    # print(result["answer"])
     chat_history = [(text, result["answer"])]
-    # return result["answer"]
+    return result["answer"]
 
 
 if 1:
